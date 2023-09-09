@@ -44,3 +44,37 @@
 
 ### Edit access rights of file
 `chmod 777 /path/to/file`
+
+### Given a file path, get file name only
+`basename $FILE_NAME`
++ E.g. basename ./my-awesome-app/website/page1.html -> page1.html
+
+### Given a file path, get file directory only
+`dirname $FILE_NAME`
++ E.g. dirname ./my-awesome-app/website/page1.html -> ./my-awesome-app/website
+
+### Find and list all files in current directory
+`find . -type f`
++  Files will be listed as (full) relative path from current directory
++  Also list files in sub-directories
+
+### Find and list all files, by file names only, in current directory
+`find . -type f | xargs basename` \n
+
+`find . -type f | sed 's:.*/::'`
+
+`find . type f -execdir printf "%s\n" {} +`
+
+### Find and list files starting with a string in file name, in current directory
+`find . -name "start-string-to-match*"`
+
+### Find and list files ending with a string in file name, in current directory
+`find . -name "*end-string-to-match"`
++ E.g. find . -name "*.yaml" returns files with file extension: '.yaml'
+
+### Find and list files containing a string in file name, in current directory
+`find . -name "*some-string-to-match*"`
+
+### Find and list files starting, containing and ending with diff string in file name, in current directory
+`find . -name "start-string-to-match*some-string-to-match*end-string-to-match"`
+

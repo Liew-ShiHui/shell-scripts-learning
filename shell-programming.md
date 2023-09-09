@@ -89,3 +89,7 @@ do
   ... statements ...
 done
 ```
+
+### Parallel processes
+`<run-command-to-start-process1> & <run-command-to-start-process2> & <run-command-to-start-process3> ...`
++ The symbol '&' allows us to start multiple processes in parallel!

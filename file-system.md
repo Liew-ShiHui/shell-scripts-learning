@@ -49,7 +49,7 @@
 `basename $FILE_NAME`
 + E.g. basename ./my-awesome-app/website/page1.html -> page1.html
 
-### Given a file name, get file name without file extension
+### Given a file path, get file name without file extension
 `${file_name%.*}`
 + Useful link: https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
 

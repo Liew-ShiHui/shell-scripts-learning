@@ -39,8 +39,8 @@
 `cat /path/to/file | pbcopy`
 
 ### Copy command output to clipboard
-`sh script-file.sh | pbcopy`
 `<run your command> | pbcopy`
++ E.g. sh script-file.sh | pbcopy
 
 ### Edit access rights of file
 `chmod 777 /path/to/file`

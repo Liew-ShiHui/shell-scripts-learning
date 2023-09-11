@@ -16,7 +16,12 @@
 `sed -i '' "s/<text-you-want-to-replace>/<new-text>/" /path/to/file`
 + -i '' -> replace text and output new file content to overwrite current file
 + s -> substitute command
-+ By default, sed replaces only first occurence of \<text-you-want-to-replace\>, to replace all occurrences, add the global flag, aka "g": `sed -i '' "s/<text-you-want-to-replace>/<new-text>/g"` 
++ By default, sed replaces only first occurence of \<text-you-want-to-replace\>, to replace all occurrences, add the global flag, aka "g": `sed -i '' "s/<text-you-want-to-replace>/<new-text>/g"`
+
+### Add text after a particular string in a file
+`sed -i '' "s/<text-you-want-to-append-to>/& <new-text>/" /path/to/file`
++ Similar to previous command
++ Using symbol "&", sed will add \<new-text\> after \<text-you-want-to-append-to\>
 
 ### Delete text, between 2 lines, from a file
 `sed -i '' "<start-line-number>,<end-line-number>d" /path/to/file`

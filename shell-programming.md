@@ -2,10 +2,16 @@
 ```
 MY_VAR=hello
 echo $MY_VAR # prints out 'hello'
+
+# Create a list variable
+MY_LIST_VAR=("item1" "item2" "item3")
+echo ${MY_LIST_VAR[@]}
 ```
 + When declaring / initiating a new variable, there is no "$" symbol and ensure that you don't have spaces before and after the assignment symbol "="
 + When referencing a variable, use "$" followed by variable name
 + I prefer to use uppercase for variable names, but this is not required by shell
++ For list variables, separate list items with space and enclose all list items in brackets ()
++ `echo $MY_LIST_VAR` will only print out the first list item, while `echo ${MY_LIST_VAR[@]}` will print out the full list 
 
 ### Conditional statements, aka _if this then that_ 
 ```

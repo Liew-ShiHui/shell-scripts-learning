@@ -96,6 +96,28 @@ do
 done
 ```
 
+### Functions and Arguments
+```
+<my_script.sh>
+arg1=$1
+arg2=$2
+
+echo $#  # outputs the number of arguments passed
+
+function simple_add_function() {
+  firstNum=$1
+  secondNum=$2
+
+  total=$firstNum + $secondNum
+  return $total
+}
+
+simple_add_function 1 2  # firstNum will be set as 1, and secondNum will be set as 2
+```
++ To pass argument(s) to a script: sh my_script.sh argOne argTwo
++ To pass argument(s) to a function: function_name argOne argTwo
++ Note that arguments are separated by spaces when passing to a function or script
+
 ### Parallel processes
 `<run-command-to-start-process1> & <run-command-to-start-process2> & <run-command-to-start-process3> ...`
 + The symbol '&' allows us to start multiple processes in parallel!

@@ -108,7 +108,7 @@ function simple_add_function() {
   firstNum=$1
   secondNum=$2
 
-  total=$firstNum + $secondNum
+  total=$(($firstNum + $secondNum))
   return $total
 }
 

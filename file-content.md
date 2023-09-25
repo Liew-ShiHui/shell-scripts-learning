@@ -23,6 +23,16 @@
 + Similar to previous command
 + Using symbol "&", sed will add \<new-text\> after \<text-you-want-to-append-to\>
 
+### Add text to end of line of text containing a particular string in a file
+```
+# Scenario: You want to append semi-colon to end of every line in your codebase that contains <match-string>
+NEW_TEXT=";"
+sed -i '' "/<match-string>/ s/$/$NEW_TEXT/" /path/to/file
+```
++ Similar to previous command
++ Symbol "$" refers to end of line
++ sed will first find string(s) containing \<match-string\>, then append $NEW_TEXT to end of respective lines
+
 ### Delete text, between 2 lines, from a file
 `sed -i '' "<start-line-number>,<end-line-number>d" /path/to/file`
 + -i '' -> delete text and output new file content to overwrite current file

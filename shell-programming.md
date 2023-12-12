@@ -122,7 +122,13 @@ simple_add_function 1 2  # firstNum will be set as 1, and secondNum will be set 
 `<run-command-to-start-process1> & <run-command-to-start-process2> & <run-command-to-start-process3> ...`
 + The symbol '&' allows us to start multiple processes in parallel!
 
-### Running mysql commands
+### Print or echo function body
+`type func_name | sed '1,3d;$d'`
++ 'func_name' must match exactly 1 function name
++ This can be used to pipe scripts to a remote tooling server
+  -  E.g. `sh ./script.sh $action | ssh remote-server-host` where ./script.sh may contain multiple functions 
+
+### Run mysql commands
 ```
 queryOne="SELECT * FROM TABLE_NAME_HERE WHERE ..." # can be insert / update / delete query
 export MYSQL_PWD=... # can be written in plain text, or a command to retrieve secret from a remote server (e.g. aws secrets manager)

@@ -121,3 +121,13 @@ simple_add_function 1 2  # firstNum will be set as 1, and secondNum will be set 
 ### Parallel processes
 `<run-command-to-start-process1> & <run-command-to-start-process2> & <run-command-to-start-process3> ...`
 + The symbol '&' allows us to start multiple processes in parallel!
+
+### Running mysql commands
+```
+queryOne="SELECT * FROM TABLE_NAME_HERE WHERE ..." # can be insert / update / delete query
+export MYSQL_PWD=... # can be written in plain text, or a command to retrieve secret from a remote server (e.g. aws secrets manager)
+mysql -h[HOSTNAME_here] -u[USERNAME_here] -D[DATABASE_NAME_here] -e "$queryOne"
+```
++ Instead of running `export MYSQL_PWD=...`, you can also pass in the param `-p[PASSWORD_here]` to mysql command
++ If select query returns exactly one row and one column, ie one cell value, you can pass in the param `-sN` to mysql command to extract that output result value and save it to a variable
+  -  E.g. `myVar=$(mysql -h[HOSTNAME_here] -u[USERNAME_here] -D[DATABASE_NAME_here] -sN -e "$queryTwo")`
